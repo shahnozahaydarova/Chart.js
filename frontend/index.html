@@ -24,10 +24,10 @@
         new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: [{% for post in posts %} '{{post.nomi}}', {% endfor %}],
             datasets: [{
               label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
+              data: [{% for post in posts %} {{post.daromadi}}, {% endfor %}],
               backgroundColor:['red','green','yellow','purple','orange','blue'],
               borderWidth: 1
       }]
